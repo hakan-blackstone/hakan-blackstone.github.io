@@ -38,30 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form submission handling
     const form = document.getElementById('schedule-form');
     if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
+      form.addEventListener('submit', () => {
         const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.innerHTML;
-        
-        btn.innerHTML = 'Sending...';
+        btn.innerHTML = 'Redirecting...';
         btn.style.opacity = '0.8';
-        
-        // Simulate API call
-        setTimeout(() => {
-          btn.innerHTML = 'Sent Successfully! ✓';
-          btn.style.backgroundColor = '#10b981';
-          btn.style.color = 'white';
-          
-          form.reset();
-          
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.backgroundColor = '';
-            btn.style.color = '';
-            btn.style.opacity = '1';
-          }, 3000);
-        }, 1500);
       });
     }
   });
